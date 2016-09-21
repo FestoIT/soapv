@@ -1,0 +1,135 @@
+<mvc:View
+	controllerName="com.festo.fiori.apps.so.apv.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar">
+
+	<semantic:DetailPage
+		id="page"
+		navButtonPress="onNavBack"
+		showNavButton="{device>/system/phone}"
+		title="{i18n>detailTitle}"
+		busy="{detailView>/busy}"
+		busyIndicatorDelay="{detailView>/delay}">
+
+		<semantic:content>
+			<ObjectHeader
+				id="objectHeader"
+				title="{BuyerName}"
+				number="{
+					path: 'NetAmount',
+					formatter: '.formatter.currencyValue'
+				}"
+				numberUnit="{CurrencyCode}">
+			</ObjectHeader>
+			<IconTabBar
+				id="iconTabBar"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter
+						id="iconTabBarFilter1"
+						icon="sap-icon://hint"
+						tooltip="{i18n>detailIconTabBarInfo}">
+					</IconTabFilter>
+					<IconTabFilter
+						id="iconTabBarFilter2"
+						icon="sap-icon://attachment"
+						tooltip="{i18n>detailIconTabBarAttachments}">
+					</IconTabFilter>
+					<IconTabFilter
+						id="iconTabBar2"
+						icon="sap-icon://notes"
+						tooltip="{i18n>detailIconTabBarActionLog}"
+						count="">
+						<Text text="{detailView>/Note}" />
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<Table
+				id="lineItemsList"
+				width="auto"
+				items="{Items}"
+				updateFinished="onListUpdateFinished"
+				noDataText="{i18n>detailLineItemTableNoDataText}"
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}"
+				class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar id="lineItemsToolbar">
+						<Title
+							id="lineItemsHeader"
+							text="{detailView>/lineItemListTitle}"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="{i18n>detailLineItemTableIDColumn}"/>
+					</Column>
+					<Column>
+						<Text text="{i18n>detailLineItemTableQuantityColumn}"/>
+					</Column>
+					<Column>
+						<Text text="{i18n>detailLineItemTableNetAmountColumn}"/>
+					</Column>
+					<Column>
+						<Text text="{i18n>detailLineItemTableGrossAmountColumn}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier
+								title="{ProductId}"
+								text="{SoItemPos}"/>
+							<ObjectNumber
+								number="{
+									path: 'Quantity'
+								}"
+								/>
+							<ObjectNumber
+								number="{
+									path: 'NetAmount',
+									formatter: '.formatter.currencyValue'
+								}"
+								unit="{CurrencyCode}"/>
+							<ObjectNumber
+								number="{
+									path: 'GrossAmount',
+									formatter: '.formatter.currencyValue'
+								}"
+								unit="{CurrencyCode}"/>	
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+	    <semantic:positiveAction>
+	        <semantic:PositiveAction id="approveButton" text="{i18n>xbut.approve}" />
+	   </semantic:positiveAction>
+	    <semantic:negativeAction>
+	        <semantic:NegativeAction id="rejectButton" text="{i18n>xbut.reject}" />
+	   </semantic:negativeAction>
+	   
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction
+				id="shareEmail"
+				press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction
+				id="shareInJam"
+				visible="{FLP>/isShareInJamActive}"
+				press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton
+				id="shareTile"
+				title="{detailView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+
+	</semantic:DetailPage>
+
+</mvc:View>
