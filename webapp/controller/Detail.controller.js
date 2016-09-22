@@ -105,8 +105,9 @@ sap.ui.define([
 			 */
 			_showObject : function (oItem) {
 				this.getRouter().navTo("line", {
-					objectId: oItem.getBindingContext().getProperty("SoId")},
-					{ProductId: oItem.getBindingContext().getProperty("ProductId")}
+					objectId: oItem.getBindingContext().getProperty("SoId"),
+					ProductId: oItem.getBindingContext().getProperty("ProductId")
+				}
 				);
 			},
 

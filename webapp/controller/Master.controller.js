@@ -217,7 +217,7 @@ sap.ui.define([
 			 * Used to create new Free of Charge Sales Order
 			 */
 			onCreateButtonPress : function () {
-				this.getRouter().navTo("CreateOrder");
+				this.getRouter().navTo("neworder", true);
 			}
 			,
 			/**

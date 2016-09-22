@@ -105,7 +105,15 @@
 					"name": "master",
 					"target": [
 						"object",
-						"order",
+						"neworder",
+						"master"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "neworder",
+					"target": [
+						"neworder",
 						"master"
 					]
 				},
@@ -121,7 +129,6 @@
 					"pattern": "SalesOrders/{objectId}/{ProducId}",
 					"name": "line",
 					"target": [
-						"detail",
 						"line"
 					]
 				}				
@@ -139,10 +146,15 @@
 					"viewLevel": 2
 				},
 				"line": {
-					"viewName": "LineItem",
+					"viewName": "Detail.LineItem",
 					"viewId": "line",
 					"viewLevel": 3					
 				},
+				"neworder": {
+					"viewName": "NewOrder",
+					"viewId": "neworder",
+					"viewLevel": 2					
+				},				
 				"detailObjectNotFound": {
 					"viewName": "DetailObjectNotFound",
 					"viewId": "detailObjectNotFound"

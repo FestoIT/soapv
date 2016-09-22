@@ -1,0 +1,22 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:footerbar="sap.ushell.ui.footerbar"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	controllerName="com.festo.fiori.apps.so.apv.controller.NewOrder">
+	<semantic:DetailPage id="page" showNavButton="{device>/system/phone}" title="{path: 'NewOrder'}" navButtonPress="onNavButtonPress">
+		<semantic:content>
+			<!-- Form for Product Information -->	
+			
+		</semantic:content>
+	    <semantic:positiveAction>
+	        <semantic:PositiveAction id="saveButton" text="{i18n>xbut.save}"  press="onSavePressed"/>
+	   </semantic:positiveAction>
+	    <semantic:negativeAction>
+	        <semantic:NegativeAction id="cancelButton" text="{i18n>xbut.cancel}" press="onCancelPressed"/>
+	   </semantic:negativeAction>		
+	</semantic:DetailPage>
+</mvc:View>

@@ -35,9 +35,6 @@
     },
     "/webapp/view/LineItem.view.xml": {
       "entitySet": "SalesOrders"
-    },
-    "/webapp/view/CreateOrder.view.xml": {
-      "entitySet": "SalesOrders"
     }
   },
   "generation": [
