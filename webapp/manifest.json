@@ -105,6 +105,7 @@
 					"name": "master",
 					"target": [
 						"object",
+						"order",
 						"master"
 					]
 				},
@@ -115,7 +116,15 @@
 						"master",
 						"object"
 					]
-				}
+				},
+				{
+					"pattern": "SalesOrders/{objectId}/{ProducId}",
+					"name": "line",
+					"target": [
+						"detail",
+						"line"
+					]
+				}				
 			],
 			"targets": {
 				"master": {
@@ -128,6 +137,11 @@
 					"viewName": "Detail",
 					"viewId": "detail",
 					"viewLevel": 2
+				},
+				"line": {
+					"viewName": "LineItem",
+					"viewId": "line",
+					"viewLevel": 3					
 				},
 				"detailObjectNotFound": {
 					"viewName": "DetailObjectNotFound",

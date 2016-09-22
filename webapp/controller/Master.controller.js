@@ -212,7 +212,14 @@ sap.ui.define([
 			onBypassed : function () {
 				this._oList.removeSelections(true);
 			},
-
+			
+			/**
+			 * Used to create new Free of Charge Sales Order
+			 */
+			onCreateButtonPress : function () {
+				this.getRouter().navTo("CreateOrder");
+			}
+			,
 			/**
 			 * Used to create GroupHeaders with non-capitalized caption.
 			 * These headers are inserted into the master list to

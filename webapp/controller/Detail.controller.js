@@ -89,10 +89,27 @@ sap.ui.define([
 					oViewModel.setProperty("/lineItemListTitle", sTitle);
 				}
 			},
-
+			
+			onHandleLineItemPress : function (oEvent) {
+				this._showObject(oEvent.getSource());
+			},
+			
 			/* =========================================================== */
 			/* begin: internal methods                                     */
 			/* =========================================================== */
+			/**
+			 * Shows the selected item in the pruduct list
+			 * On phones a additional history entry is created
+			 * @param {sap.m.ObjectListItem} oItem selected Item
+			 * @private
+			 */
+			_showObject : function (oItem) {
+				this.getRouter().navTo("line", {
+					objectId: oItem.getBindingContext().getProperty("SoId")},
+					{ProductId: oItem.getBindingContext().getProperty("ProductId")}
+				);
+			},
+
 
 			/**
 			 * Binds the view to the object path and expands the aggregated line items.

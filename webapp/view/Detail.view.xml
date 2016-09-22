@@ -76,7 +76,8 @@
 					</Column>
 				</columns>
 				<items>
-					<ColumnListItem>
+					<ColumnListItem
+						type="Navigation" press="onHandleLineItemPress">
 						<cells>
 							<ObjectIdentifier
 								title="{ProductId}"
