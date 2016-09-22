@@ -78,10 +78,7 @@
 				</items>
 			</List>
 		</semantic:content>
-		
-		<semantic:customFooterContent>
-			<Button  id="masterCreate1" text="{i18n>xbut.create}" type="Emphasized" press="onCreateButtonPress"></Button >
-		</semantic:customFooterContent>
+			
 		<semantic:addAction>
 			<semantic:AddAction id="Add" press="onCreateButtonPress" tooltip="{i18n>xbut.create}"/>
 		</semantic:addAction>

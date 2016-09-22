@@ -3,13 +3,12 @@ sap.ui.define([
 	"sap/ui/core/Component",
 	"sap/ui/model/json/JSONModel",
 	"com/festo/fiori/apps/so/apv/model/formatter"
-], function(Controller, Component, JSONModel, MetadataAnalyser, ValueHelpProvider,
-	ValueState, SubControllerForShare, formatter) {
+], function(Controller, Component, JSONModel, formatter) {
 	"use strict";
 
 	return Controller.extend("com.festo.fiori.apps.so.apv.controller.NewOrder", {
 		formatter: formatter,
-		
+
 			onInit : function () {
 				// Model used to manipulate control states. The chosen values make sure,
 				// detail page is busy indication immediately so there is no break in

@@ -15,7 +15,17 @@
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
+					"localUri": "localService/metadata.xml",
+					"annotations": [
+						"annotation1"
+					]
+				}
+			},
+			"annotation1": {
+				"uri": "../annotation1.xml",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "../annotation1.xml"
 				}
 			}
 		},
@@ -131,7 +141,7 @@
 					"target": [
 						"line"
 					]
-				}				
+				}
 			],
 			"targets": {
 				"master": {
@@ -148,13 +158,13 @@
 				"line": {
 					"viewName": "Detail.LineItem",
 					"viewId": "line",
-					"viewLevel": 3					
+					"viewLevel": 3
 				},
 				"neworder": {
 					"viewName": "NewOrder",
 					"viewId": "neworder",
-					"viewLevel": 2					
-				},				
+					"viewLevel": 2
+				},
 				"detailObjectNotFound": {
 					"viewName": "DetailObjectNotFound",
 					"viewId": "detailObjectNotFound"

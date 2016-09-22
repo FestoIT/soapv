@@ -1,19 +1,35 @@
-<mvc:View
-	xmlns:core="sap.ui.core"
-	xmlns="sap.m"
-	xmlns:footerbar="sap.ushell.ui.footerbar"
-	xmlns:f="sap.ui.layout.form"
-	xmlns:l="sap.ui.layout"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.m.semantic"
-	controllerName="com.festo.fiori.apps.so.apv.controller.NewOrder">
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" controllerName="com.festo.fiori.apps.so.apv.controller.NewOrder">
 	<semantic:DetailPage id="page" showNavButton="{device>/system/phone}" title="{path: 'NewOrder'}" navButtonPress="onNavButtonPress">
 		<semantic:content>
 			<!-- Form for Product Information -->	
 			
+		<l:VerticalLayout width="100%" id="__layout0"/>	
+			
+		<l:VerticalLayout width="100%" id="__layout1"/>	
+			
+		<l:VerticalLayout width="100%" id="__layout2">	
+			
+		    <l:content>	
+			
+		        <List noDataText="Drop list items here" id="__list0">	
+			
+		            <items>	
+			
+		                <StandardListItem type="Navigation" counter="0" title="List Item 1" description="Description text" icon="sap-icon://picture" id="__item0"/>	
+			
+		                <StandardListItem type="Navigation" counter="0" title="List Item 2" description="Description text" icon="sap-icon://picture" id="__item1"/>	
+			
+		                <StandardListItem type="Navigation" counter="0" title="List Item 3" description="Description text" icon="sap-icon://picture" id="__item2"/></items>	
+			
+		        </List>	
+			
+		    </l:content>	
+			
+		</l:VerticalLayout>	
+			
 		</semantic:content>
 	    <semantic:positiveAction>
-	        <semantic:PositiveAction id="saveButton" text="{i18n>xbut.save}"  press="onSavePressed"/>
+	        <semantic:PositiveAction id="saveButton" text="{i18n>xbut.save}" press="onSavePressed"/>
 	   </semantic:positiveAction>
 	    <semantic:negativeAction>
 	        <semantic:NegativeAction id="cancelButton" text="{i18n>xbut.cancel}" press="onCancelPressed"/>
